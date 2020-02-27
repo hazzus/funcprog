@@ -1,10 +1,10 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 
 module Task7
-    ( first
-    , second
-    , third
-    ) where
+  ( first
+  , second
+  , third
+  ) where
 
 import Data.Either (lefts, rights)
 
