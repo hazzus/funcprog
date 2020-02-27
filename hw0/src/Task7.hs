@@ -20,30 +20,30 @@ first = -- null . head $ map (uncurry id) [((++) "Dorian ", " Grey")]
     t6 = [t5] :: [(String -> String, String)]
     t7 = id :: (String -> String) -> String -> String
     t8 = uncurry
-        :: ((String -> String) -> String -> String)
-        -> (String -> String, String) -> String
+      :: ((String -> String) -> String -> String)
+      -> (String -> String, String) -> String
     t9 = t8 t7 :: (String -> String, String) -> String
     t10 = map
-        :: ((String -> String, String) -> String)
-        -> [(String -> String, String)]
-        -> [String]
+      :: ((String -> String, String) -> String)
+      -> [(String -> String, String)]
+      -> [String]
     t11 = t10 t9
-        :: [(String -> String, String)]
-        -> [String]
+      :: [(String -> String, String)]
+      -> [String]
     t12 = t11 t6 :: [String]
     t13 = ($)
-        :: ([String] -> Bool)
-        -> [String]
-        -> Bool
+      :: ([String] -> Bool)
+      -> [String]
+      -> Bool
     t14 = head :: [String] -> String
     t15 = (.)
-        :: (String -> Bool)
-        -> ([String] -> String)
-        -> ([String] -> Bool)
+      :: (String -> Bool)
+      -> ([String] -> String)
+      -> ([String] -> Bool)
     t16 = null :: String -> Bool
     t17 = t15 t16
-        :: ([String] -> String)
-        -> ([String] -> Bool)
+      :: ([String] -> String)
+      -> ([String] -> Bool)
     t18 = t17 t14 :: [String] -> Bool
     t19 = t13 t18 :: [String] -> Bool
   in t19 t12

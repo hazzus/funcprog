@@ -9,16 +9,16 @@ module Task1
 -- | The 'distributivity' function transforms Either with right type as pair
 -- into pair of Either (with 2 lefts or unwrapped pair)
 distributivity
-    :: Either a (b, c)
-    -> (Either a b, Either a c)
+  :: Either a (b, c)
+  -> (Either a b, Either a c)
 distributivity (Left x)       = (Left x, Left x)
 distributivity (Right (x, y)) = (Right x, Right y)
 
 -- | The 'associator' function represents assosiativity
 -- in tuples
 associator
-    :: (a, (b, c))
-    -> ((a, b), c)
+  :: (a, (b, c))
+  -> ((a, b), c)
 associator (x, (y, z)) = ((x, y), z)
 
 type (<->) a b = (a -> b, b -> a)
@@ -26,8 +26,8 @@ type (<->) a b = (a -> b, b -> a)
 -- | The 'eitherAssoc' function combines associativity with
 -- Either unwrapping
 eitherAssoc
-    :: Either a (Either b c)
-    <-> Either (Either a b) c
+  :: Either a (Either b c)
+  <-> Either (Either a b) c
 eitherAssoc = (left, right)
   where
     left
