@@ -1,9 +1,9 @@
 module Task6
-    ( harold
-    , haroldWHNF
-    , poleChudes
-    , poleChudesWHNF
-    ) where
+  ( harold
+  , haroldWHNF
+  , poleChudes
+  , poleChudesWHNF
+  ) where
 
 import Data.Maybe (mapMaybe)
 import Prelude hiding (null)
@@ -11,9 +11,9 @@ import Task1 (distributivity)
 
 foo :: Char -> Maybe Double
 foo char =
-    case char == 'o' of
-      True  -> Just $ exp pi
-      False -> Nothing
+  case char == 'o' of
+    True  -> Just $ exp pi
+    False -> Nothing
 
 -- not actually, but good enough for this task
 null :: [a] -> Bool
