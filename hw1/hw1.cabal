@@ -16,9 +16,52 @@ extra-source-files:  README.md
 cabal-version:       >=1.10
 tested-with:         GHC == 8.0.1
 
-library
+library 
   hs-source-dirs:      src
-  exposed-modules:     Lib
+  exposed-modules:     Block1 Block2 Block3 Block4 Block5 Block6
   ghc-options:         -Wall
   build-depends:       base >= 4.9 && < 5
   default-language:    Haskell2010
+
+test-suite block1
+  type:                detailed-0.9
+  hs-source-dirs:      test
+  test-module:         TestBlock1
+  build-depends:       base >= 4.9 && < 5
+                     , Cabal >= 3
+                     , hw1
+  default-language:    Haskell2010
+
+test-suite block2
+  type:                detailed-0.9
+  hs-source-dirs:      test
+  test-module:         TestBlock2
+  build-depends:       base >= 4.9 && < 5
+                     , Cabal >= 3
+                     , hw1
+  default-language:    Haskell2010
+
+test-suite block3
+  type:                detailed-0.9
+  hs-source-dirs:      test
+  test-module:         TestBlock3
+  build-depends:       base >= 4.9 && < 5
+                     , Cabal >= 3
+                     , hw1
+  default-language:    Haskell2010
+
+test-suite other-blocks-and-property
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  ghc-options:         -Wall
+  main-is:             Spec.hs
+  build-depends:       base >= 4.9 && < 5
+                     , hspec >= 1.3
+                     , QuickCheck
+                     , hspec-discover
+                     , hedgehog
+                     , hw1
+  other-modules:       Block1Spec
+                     , Block2Spec
+                     , Block4Spec
+                     , Block5Spec
