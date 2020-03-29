@@ -59,7 +59,6 @@ test-suite other-blocks-and-property
                      , hspec >= 1.3
                      , QuickCheck
                      , hspec-discover
-                     , hedgehog
                      , hw1
   other-modules:       Block1Spec
                      , Block2Spec
