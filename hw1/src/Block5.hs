@@ -54,15 +54,11 @@ eval e =
       -> (Int -> Maybe String)
       -> Either ArithmeticError Int
     operate f l r check =
-      case eval l of
-        err@(Left _) -> err
-        Right x ->
-          case eval r of
-            err@(Left _) -> err
-            Right y ->
-              case check y of
-                Just m  -> Left (ArithmeticError { message = m })
-                Nothing -> Right (f x y)
+      eval l >>= (\x ->
+        eval r >>= (\y ->
+          case check y of
+            Just m  -> Left (ArithmeticError m)
+            Nothing -> Right (f x y)))
 
 -- Task 2
 
