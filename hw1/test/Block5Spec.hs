@@ -16,3 +16,4 @@ spec = do
       eval (Pow (Const 3) (Const 4)) `shouldBe` Right 81
       eval (Div (Const 1) (Const 0)) `shouldBe` Left (ArithmeticError { message = "Division by zero" })
       eval (Pow (Const 1) (Const (-2))) `shouldBe` Left (ArithmeticError { message = "Negative power" })
+      eval (Mul (Pow (Const 4) $ Const (-1)) $ Div (Const 1) (Const 0)) `shouldBe` Left (ArithmeticError { message = "Negative power" })
