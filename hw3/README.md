@@ -1,3 +1,10 @@
-# hw3
+# HW3 for FP Course
 
-[![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/hazzus/funcprog/blob/master/hw3/LICENSE)
+## `stack bench`
+for benching 1 task
+
+## `stack test`
+for testing 1 task
+
+## `stack run`
+for runninf comonad-19 simulation
